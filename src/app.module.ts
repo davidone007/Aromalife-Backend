@@ -31,10 +31,10 @@ import { OrderItemModule } from './order-items/order-items.module';
           return {
             type: 'postgres',
             url: configService.get('DATABASE_URL'),
-            entities: [__dirname + '/**/*.entity{.ts,.js}'],
+            entities: [__dirname + 'dist/**/*.entity{.ts,.js}'],
             synchronize: true, 
             ssl: {
-              rejectUnauthorized: true // Necesario para algunas plataformas cloud
+              rejectUnauthorized: false // Necesario para algunas plataformas cloud
             },
             logging: false,
           }

@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Gift } from '../entities/gift.entity';
@@ -12,37 +12,69 @@ export class GiftsService {
     private readonly giftRepository: Repository<Gift>,
   ) {}
 
-  async create(createGiftDto: CreateGiftDto): Promise<Gift> {
-    const gift = this.giftRepository.create(createGiftDto);
-    return this.giftRepository.save(gift);
+  async create(data: Partial<Gift>): Promise<Gift> {
+    try {
+      const gift = this.giftRepository.create(data);
+      const saved = await this.giftRepository.save(gift);
+      if (!saved) {
+        throw new InternalServerErrorException('Gift could not be created');
+      }
+      return saved;
+    } catch (error) {
+      console.error('Error in create gift:', error);
+      throw error;
+    }
   }
 
   async findAll(): Promise<Gift[]> {
-    const gifts = await this.giftRepository.find();
-    if (!gifts || gifts.length === 0) {
-      throw new NotFoundException('No gifts found');
+    try {
+      const gifts = await this.giftRepository.find({});
+      if (!gifts || gifts.length === 0) {
+        throw new NotFoundException('No gifts found');
+      }
+      return gifts;
+    } catch (error) {
+      console.error('Error in findAll gifts:', error);
+      throw error;
     }
-    return gifts;
   }
 
   async findOne(id: string): Promise<Gift> {
-    const gift = await this.giftRepository.findOne({ where: { id } });
-    if (!gift) {
-      throw new NotFoundException(`Gift with ID ${id} not found`);
+    try {
+      const gift = await this.giftRepository.findOne({ where: { id } });
+      if (!gift) {
+        throw new NotFoundException('Gift not found');
+      }
+      return gift;
+    } catch (error) {
+      console.error('Error in findOne gift:', error);
+      throw error;
     }
-    return gift;
   }
 
-  async update(id: string, updateGiftDto: UpdateGiftDto): Promise<Gift> {
-    const gift = await this.findOne(id);
-    Object.assign(gift, updateGiftDto);
-    return this.giftRepository.save(gift);
+  async update(id: string, data: Partial<Gift>): Promise<Gift> {
+    try {
+      const exists = await this.giftRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Gift not found');
+      }
+      await this.giftRepository.update(id, data);
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in update gift:', error);
+      throw error;
+    }
   }
 
   async remove(id: string): Promise<void> {
-    const result = await this.giftRepository.delete(id);
-    if (result.affected === 0) {
-      throw new NotFoundException(`Gift with ID ${id} not found`);
+    try {
+      const result = await this.giftRepository.delete(id);
+      if (result.affected === 0) {
+        throw new NotFoundException('Gift not found');
+      }
+    } catch (error) {
+      console.error('Error in remove gift:', error);
+      throw error;
     }
   }
 }

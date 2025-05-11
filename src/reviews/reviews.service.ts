@@ -18,62 +18,92 @@ export class ReviewService {
   ) {}
 
   async create(createReviewDto: Partial<Review>): Promise<Review> {
-    const review = this.reviewRepository.create(createReviewDto);
-    const saved = await this.reviewRepository.save(review);
-    if (!saved) {
-      throw new InternalServerErrorException('Review could not be created');
+    try {
+      const review = this.reviewRepository.create(createReviewDto);
+      const saved = await this.reviewRepository.save(review);
+      if (!saved) {
+        throw new InternalServerErrorException('Review could not be created');
+      }
+      return saved;
+    } catch (error) {
+      console.error('Error in create review:', error);
+      throw error;
     }
-    return saved;
   }
 
   async findAll(): Promise<Review[]> {
-    const reviews = await this.reviewRepository.find({});
-    if (!reviews || reviews.length === 0) {
-      throw new NotFoundException('No reviews found');
+    try {
+      const reviews = await this.reviewRepository.find({});
+      if (!reviews || reviews.length === 0) {
+        throw new NotFoundException('No reviews found');
+      }
+      return reviews;
+    } catch (error) {
+      console.error('Error in findAll reviews:', error);
+      throw error;
     }
-    return reviews;
   }
 
   async findOne(id: string): Promise<Review> {
-    const review = await this.reviewRepository.findOne({ where: { id } });
-    if (!review) {
-      throw new NotFoundException('Review not found');
+    try {
+      const review = await this.reviewRepository.findOne({ where: { id } });
+      if (!review) {
+        throw new NotFoundException('Review not found');
+      }
+      return review;
+    } catch (error) {
+      console.error('Error in findOne review:', error);
+      throw error;
     }
-    return review;
   }
 
   async update(id: string, updateReviewDto: Partial<Review>): Promise<Review> {
-    const exists = await this.reviewRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Review not found');
+    try {
+      const exists = await this.reviewRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Review not found');
+      }
+      await this.reviewRepository.update(id, updateReviewDto);
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in update review:', error);
+      throw error;
     }
-    await this.reviewRepository.update(id, updateReviewDto);
-    return this.findOne(id);
   }
 
   async remove(id: string): Promise<void> {
-    const exists = await this.reviewRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Review not found');
+    try {
+      const exists = await this.reviewRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Review not found');
+      }
+      await this.reviewRepository.delete(id);
+    } catch (error) {
+      console.error('Error in remove review:', error);
+      throw error;
     }
-    await this.reviewRepository.delete(id);
   }
 
   async assignReviewToOrder(reviewId: string, orderId: string): Promise<Review> {
-    const review = await this.reviewRepository.findOne({
-      where: { id: reviewId },
-      relations: ['order'],
-    });
-    if (!review) {
-      throw new NotFoundException('Review not found');
+    try {
+      const review = await this.reviewRepository.findOne({
+        where: { id: reviewId },
+        relations: ['order'],
+      });
+      if (!review) {
+        throw new NotFoundException('Review not found');
+      }
+    
+      const order = await this.orderRepository.findOne({ where: { id: orderId } });
+      if (!order) {
+        throw new NotFoundException('Order not found');
+      }
+    
+      review.order = order;
+      return this.reviewRepository.save(review);
+    } catch (error) {
+      console.error('Error in assignReviewToOrder:', error);
+      throw error;
     }
-  
-    const order = await this.orderRepository.findOne({ where: { id: orderId } });
-    if (!order) {
-      throw new NotFoundException('Order not found');
-    }
-  
-    review.order = order;
-    return this.reviewRepository.save(review);
   }
 }

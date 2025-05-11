@@ -22,56 +22,86 @@ export class OrdersService {
   ) {}
 
   async createOrder(data: Partial<Order>): Promise<Order> {
-    const order = this.orderRepository.create(data);
-    const saved = await this.orderRepository.save(order);
-    if (!saved) {
-      throw new InternalServerErrorException('Order could not be created');
+    try {
+      const order = this.orderRepository.create(data);
+      const saved = await this.orderRepository.save(order);
+      if (!saved) {
+        throw new InternalServerErrorException('Order could not be created');
+      }
+      return saved;
+    } catch (error) {
+      console.error('Error in createOrder:', error);
+      throw error;
     }
-    return saved;
   }
 
   async findAll(): Promise<Order[]> {
-    const orders = await this.orderRepository.find({});
-    if (!orders || orders.length === 0) {
-      throw new NotFoundException('No orders found');
+    try {
+      const orders = await this.orderRepository.find({});
+      if (!orders || orders.length === 0) {
+        throw new NotFoundException('No orders found');
+      }
+      return orders;
+    } catch (error) {
+      console.error('Error in findAll orders:', error);
+      throw error;
     }
-    return orders;
   }
 
   async findOne(id: string): Promise<Order> {
-    const order = await this.orderRepository.findOne({
-      where: { id },
-    });
-    if (!order) {
-      throw new NotFoundException('Order not found');
+    try {
+      const order = await this.orderRepository.findOne({
+        where: { id },
+      });
+      if (!order) {
+        throw new NotFoundException('Order not found');
+      }
+      return order;
+    } catch (error) {
+      console.error('Error in findOne order:', error);
+      throw error;
     }
-    return order;
   }
 
   async update(id: string, data: Partial<Order>): Promise<Order> {
-    const exists = await this.orderRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Order not found');
+    try {
+      const exists = await this.orderRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Order not found');
+      }
+      await this.orderRepository.update(id, data);
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in update order:', error);
+      throw error;
     }
-    await this.orderRepository.update(id, data);
-    return this.findOne(id);
   }
 
   async remove(id: string): Promise<void> {
-    const exists = await this.orderRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Order not found');
+    try {
+      const exists = await this.orderRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Order not found');
+      }
+      await this.orderRepository.delete(id);
+    } catch (error) {
+      console.error('Error in remove order:', error);
+      throw error;
     }
-    await this.orderRepository.delete(id);
   }
 
   async updateStatus(id: string, status: OrderStatus): Promise<Order> {
-    const exists = await this.orderRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Order not found');
+    try {
+      const exists = await this.orderRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Order not found');
+      }
+      await this.orderRepository.update(id, { status });
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in updateStatus order:', error);
+      throw error;
     }
-    await this.orderRepository.update(id, { status });
-    return this.findOne(id);
   }
 
   calculateTotalAmount(candles: Candle[]): number {

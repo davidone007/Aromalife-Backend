@@ -38,6 +38,7 @@ export class AuthService {
       });
       return await this.userRepository.save(user);
     } catch (error) {
+      console.error('Error in createUser:', error);
       if (error instanceof ConflictException) {
         throw error;
       }
@@ -63,41 +64,50 @@ export class AuthService {
       });
       return await this.userRepository.save(user);
     } catch (error) {
+      console.error('Error in createClient:', error);
       if (error instanceof ConflictException) {
         throw error;
       }
-      console.log(error);
       throw new Error('Error creating client');
-     
     }
   }
   
 
   async loginUser(loginUserDto: LoginUserDto) {
-    const { email, password } = loginUserDto;
-    const user: User | null = await this.userRepository.findOne({
-      where: { email },
-      select: ['id', 'email', 'name', 'password', 'isActive'],
-    });
-    if (!user || !bcrypt.compareSync(password, user.password)) {
-      throw new UnauthorizedException('Invalid credentials');
-    }
+    try {
+      const { email, password } = loginUserDto;
+      const user: User | null = await this.userRepository.findOne({
+        where: { email },
+        select: ['id', 'email', 'name', 'password', 'isActive'],
+      });
+      if (!user || !bcrypt.compareSync(password, user.password)) {
+        throw new UnauthorizedException('Invalid credentials');
+      }
 
-    return {
-      user_id: user.id,
-      name: user.name,
-      email: user.email,
-      token: this.jwtService.sign({ user_id: user.id }),
-    };
+      return {
+        user_id: user.id,
+        name: user.name,
+        email: user.email,
+        token: this.jwtService.sign({ user_id: user.id }),
+      };
+    } catch (error) {
+      console.error('Error in loginUser:', error);
+      throw error;
+    }
   }
 
   async findAll(isActive?: boolean): Promise<User[]> {
-    const where = isActive !== undefined ? { isActive } : {};
-    const users = await this.userRepository.find({ where });
-    if (!users || users.length === 0) {
-      throw new NotFoundException('No users found');
+    try {
+      const where = isActive !== undefined ? { isActive } : {};
+      const users = await this.userRepository.find({ where });
+      if (!users || users.length === 0) {
+        throw new NotFoundException('No users found');
+      }
+      return users;
+    } catch (error) {
+      console.error('Error in findAll:', error);
+      throw error;
     }
-    return users;
   }
 
   async findOne(id: string): Promise<User> {
@@ -112,16 +122,21 @@ export class AuthService {
   }
 
   async update(id: string, updateUserDto: Partial<User>): Promise<User> {
-    const user = await this.userRepository.findOne({ where: { id } });
-    if (!user) {
-      throw new NotFoundException('User not found');
-    }
-    if (!user.isActive) {
-      throw new UnauthorizedException('User is not active');
-    }
+    try {
+      const user = await this.userRepository.findOne({ where: { id } });
+      if (!user) {
+        throw new NotFoundException('User not found');
+      }
+      if (!user.isActive) {
+        throw new UnauthorizedException('User is not active');
+      }
 
-    await this.userRepository.update(id, updateUserDto);
-    return this.findOne(id);
+      await this.userRepository.update(id, updateUserDto);
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in update:', error);
+      throw error;
+    }
   }
 
   async deactivate(id: string): Promise<User> {
@@ -166,16 +181,21 @@ export class AuthService {
     id: string,
     updateUserRolesDto: UpdateUserRolesDto,
   ): Promise<User> {
-    const user = await this.userRepository.findOne({ where: { id } });
+    try {
+      const user = await this.userRepository.findOne({ where: { id } });
 
-    if (!user) {
-      throw new NotFoundException('User not found');
-    }
-    if (!user.isActive) {
-      throw new UnauthorizedException('User is not active');
-    }
-    user.roles = updateUserRolesDto.roles;
+      if (!user) {
+        throw new NotFoundException('User not found');
+      }
+      if (!user.isActive) {
+        throw new UnauthorizedException('User is not active');
+      }
+      user.roles = updateUserRolesDto.roles;
 
-    return await this.userRepository.save(user);
+      return await this.userRepository.save(user);
+    } catch (error) {
+      console.error('Error in updateUserRoles:', error);
+      throw error;
+    }
   }
 }

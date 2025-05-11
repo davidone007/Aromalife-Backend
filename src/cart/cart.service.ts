@@ -27,66 +27,90 @@ export class CartService {
   ) {}
 
   async create(createCartDto: CreateCartDto): Promise<Cart> {
-    const cart = this.cartRepository.create(createCartDto);
-    return this.cartRepository.save(cart);
+    try {
+      const cart = this.cartRepository.create(createCartDto);
+      return await this.cartRepository.save(cart);
+    } catch (error) {
+      console.error('Error in create cart:', error);
+      throw error;
+    }
   }
 
   async findOne(id: string): Promise<Cart> {
-    const cart = await this.cartRepository.findOne({
-      where: { id },
-      relations: ['cartItems', 'cartItems.gift', 'cartItems.candle'],
-    });
-    if (!cart) throw new NotFoundException('Cart not found');
-    return cart;
+    try {
+      const cart = await this.cartRepository.findOne({
+        where: { id },
+        relations: ['cartItems', 'cartItems.gift', 'cartItems.candle'],
+      });
+      if (!cart) throw new NotFoundException('Cart not found');
+      return cart;
+    } catch (error) {
+      console.error('Error in findOne cart:', error);
+      throw error;
+    }
   }
 
   async update(id: string, updateCartDto: UpdateCartDto): Promise<Cart> {
-    const cart = await this.cartRepository.preload({ id, ...updateCartDto });
-    if (!cart) throw new NotFoundException('Cart not found');
-    return this.cartRepository.save(cart);
+    try {
+      const cart = await this.cartRepository.preload({ id, ...updateCartDto });
+      if (!cart) throw new NotFoundException('Cart not found');
+      return await this.cartRepository.save(cart);
+    } catch (error) {
+      console.error('Error in update cart:', error);
+      throw error;
+    }
   }
 
   async remove(id: string): Promise<void> {
-    const cart = await this.cartRepository.findOne({ where: { id } });
-    if (!cart) throw new NotFoundException('Cart not found');
-    await this.cartRepository.delete(id);
+    try {
+      const cart = await this.cartRepository.findOne({ where: { id } });
+      if (!cart) throw new NotFoundException('Cart not found');
+      await this.cartRepository.delete(id);
+    } catch (error) {
+      console.error('Error in remove cart:', error);
+      throw error;
+    }
   }
 
   async addItem(
     cartId: string,
     addCartItemDto: AddCartItemDto,
   ): Promise<CartItem> {
-    const cart = await this.cartRepository.findOne({ where: { id: cartId } });
-    if (!cart) throw new NotFoundException('Cart not found');
-    let gift: Gift | null = null;
-    let candle: Candle | null = null;
+    try {
+      const cart = await this.cartRepository.findOne({ where: { id: cartId } });
+      if (!cart) throw new NotFoundException('Cart not found');
+      
+      let gift: Gift | null = null;
+      let candle: Candle | null = null;
 
-    if (addCartItemDto.giftId) {
-      gift = await this.giftRepository.findOne({
-        where: { id: addCartItemDto.giftId },
+      if (addCartItemDto.giftId) {
+        gift = await this.giftRepository.findOne({
+          where: { id: addCartItemDto.giftId },
+        });
+        if (!gift) throw new NotFoundException('Gift not found');
+      }
+
+      if (addCartItemDto.candleId) {
+        candle = await this.candleRepository.findOne({
+          where: { id: addCartItemDto.candleId },
+        });
+        if (!candle) throw new NotFoundException('Candle not found');
+      }
+
+      const cartItem = this.cartItemRepository.create({
+        quantity: addCartItemDto.quantity,
       });
-      if (!gift) throw new NotFoundException('Gift not found');
+      
+      cartItem.cart = cart;
+      if (gift) cartItem.gift = gift;
+      if (candle) cartItem.candle = candle;
+      
+      cartItem.calculatePrice();
+      return await this.cartItemRepository.save(cartItem);
+    } catch (error) {
+      console.error('Error in addItem to cart:', error);
+      throw error;
     }
-
-    if (addCartItemDto.candleId) {
-      candle = await this.candleRepository.findOne({
-        where: { id: addCartItemDto.candleId },
-      });
-      if (!candle) throw new NotFoundException('Candle not found');
-    }
-
-    const cartItem = this.cartItemRepository.create({
-      cart,
-      gift,
-      candle,
-      quantity: addCartItemDto.quantity,
-      unitPrice: 0, // temporary value
-      totalPrice: 0,
-    } as DeepPartial<CartItem>);
-
-    cartItem.calculatePrice();
-
-    return this.cartItemRepository.save(cartItem);
   }
 
   async updateItem(
@@ -94,39 +118,54 @@ export class CartService {
     itemId: string,
     updateCartItemDto: UpdateCartItemDto,
   ): Promise<CartItem> {
-    const cartItem = await this.cartItemRepository.findOne({
-      where: { id: itemId, cart: { id: cartId } },
-      relations: ['gift', 'candle'],
-    });
-    if (!cartItem) throw new NotFoundException('Cart item not found');
-    Object.assign(cartItem, updateCartItemDto);
-    cartItem.calculatePrice();
-    return this.cartItemRepository.save(cartItem);
+    try {
+      const cartItem = await this.cartItemRepository.findOne({
+        where: { id: itemId, cart: { id: cartId } },
+        relations: ['gift', 'candle'],
+      });
+      if (!cartItem) throw new NotFoundException('Cart item not found');
+      Object.assign(cartItem, updateCartItemDto);
+      cartItem.calculatePrice();
+      return await this.cartItemRepository.save(cartItem);
+    } catch (error) {
+      console.error('Error in updateItem in cart:', error);
+      throw error;
+    }
   }
 
   async removeItem(cartId: string, itemId: string): Promise<void> {
-    const cartItem = await this.cartItemRepository.findOne({
-      where: { id: itemId, cart: { id: cartId } },
-    });
-    if (!cartItem) throw new NotFoundException('Cart item not found');
-    await this.cartItemRepository.delete(itemId);
+    try {
+      const cartItem = await this.cartItemRepository.findOne({
+        where: { id: itemId, cart: { id: cartId } },
+      });
+      if (!cartItem) throw new NotFoundException('Cart item not found');
+      await this.cartItemRepository.delete(itemId);
+    } catch (error) {
+      console.error('Error in removeItem from cart:', error);
+      throw error;
+    }
   }
 
   async assignUserToCart(cartId: string, userId: string): Promise<Cart> {
-    const cart = await this.cartRepository.findOne({
-      where: { id: cartId },
-      relations: ['user'],
-    });
-    if (!cart) {
-      throw new NotFoundException('Cart not found');
+    try {
+      const cart = await this.cartRepository.findOne({
+        where: { id: cartId },
+        relations: ['user'],
+      });
+      if (!cart) {
+        throw new NotFoundException('Cart not found');
+      }
+    
+      const user = await this.userRepository.findOne({ where: { id: userId } });
+      if (!user) {
+        throw new NotFoundException('User not found');
+      }
+    
+      cart.user = user;
+      return await this.cartRepository.save(cart);
+    } catch (error) {
+      console.error('Error in assignUserToCart:', error);
+      throw error;
     }
-  
-    const user = await this.userRepository.findOne({ where: { id: userId } });
-    if (!user) {
-      throw new NotFoundException('User not found');
-    }
-  
-    cart.user = user;
-    return this.cartRepository.save(cart);
   }
 }

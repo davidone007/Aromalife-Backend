@@ -1,4 +1,3 @@
-
 import { ConfigService } from '@nestjs/config';
 import {
   Injectable,
@@ -23,7 +22,6 @@ export class AiService {
     this.apiUrlMessage = this.configService.get<string>('GEMINI_API_URL') || '';
     this.apiKeyImage = this.configService.get<string>('HUGGING_FACE_API_KEY') || '';
     this.apiUrlImage = this.configService.get<string>('IMAGE_API_URL') || '';
-
   }
 
   async generateText(prompt: string): Promise<string> {
@@ -49,22 +47,23 @@ export class AiService {
         return candidates[0].content.parts[0].text;
       }
 
+      console.error('Error in generateText: No response from Gemini API');
       throw new InternalServerErrorException('No response from Gemini API');
 
     } catch (error) {
       if (error.response) {
         const { status, data } = error.response;
-
-        // Usamos un mensaje más específico si el error tiene un campo 'error' en 'data'
-        const message =
-          typeof data === 'object' && data.error
-            ? data.error
-            : 'Failed to generate text from Gemini API';
-
-        // Lanzamos la excepción con el código de estado HTTP y el mensaje de error
+        const message = typeof data === 'object' && data.error
+          ? data.error
+          : 'Failed to generate text from Gemini API';
+        
+        console.error(`Error in generateText: ${message}`, {
+          status,
+          errorDetails: data
+        });
         throw new HttpException(message, status);
       } else {
-        // Si no hay respuesta HTTP, lanzamos un error genérico del servidor
+        console.error('Error in generateText: Server error', error);
         throw new InternalServerErrorException('Failed to generate text due to a server issue');
       }
     }
@@ -81,6 +80,7 @@ export class AiService {
       const imageUrl = response.data.images?.[0];
 
       if (!imageUrl) {
+        console.error('Error in generateImage: Image URL not found in response');
         throw new InternalServerErrorException('Image URL was not found in the API response.');
       }
 
@@ -92,29 +92,48 @@ export class AiService {
 
         if (axiosError.response) {
           const status = axiosError.response.status;
+          let errorMessage: string;
 
           switch (status) {
             case 400:
-              throw new BadRequestException('Invalid request to the image generation API.');
+              errorMessage = 'Invalid request to the image generation API.';
+              break;
             case 401:
             case 403:
-              throw new UnauthorizedException('You are not authorized to generate images.');
+              errorMessage = 'You are not authorized to generate images.';
+              break;
             case 404:
-              throw new NotFoundException('The image generation service was not found.');
+              errorMessage = 'The image generation service was not found.';
+              break;
             default:
-              throw new HttpException(`External service error: ${axiosError.response.statusText}`, status);
+              errorMessage = `External service error: ${axiosError.response.statusText}`;
+          }
+
+          console.error(`Error in generateImage: ${errorMessage}`, {
+            status,
+            errorDetails: axiosError.response.data
+          });
+
+          switch (status) {
+            case 400:
+              throw new BadRequestException(errorMessage);
+            case 401:
+            case 403:
+              throw new UnauthorizedException(errorMessage);
+            case 404:
+              throw new NotFoundException(errorMessage);
+            default:
+              throw new HttpException(errorMessage, status);
           }
         }
 
-        // If no response (e.g., timeout, DNS error)
+        console.error('Error in generateImage: Service unavailable', axiosError);
         throw new HttpException('Could not reach the image generation API.', HttpStatus.SERVICE_UNAVAILABLE);
       }
 
-      // Unknown or internal error
-      console.error('Unexpected error generating image:', error);
+      console.error('Unexpected error in generateImage:', error);
       throw new InternalServerErrorException('An unexpected error occurred while generating the image.');
     }
-}
-
+  }
 }
 

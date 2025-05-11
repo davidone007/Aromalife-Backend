@@ -24,84 +24,129 @@ export class CandlesService {
   ) {}
 
   async createCandle(data: Partial<Candle>): Promise<Candle> {
-    const candle = this.candleRepository.create(data);
-    const saved = await this.candleRepository.save(candle);
-    if (!saved) {
-      throw new InternalServerErrorException('Candle could not be created');
+    try {
+      const candle = this.candleRepository.create(data);
+      const saved = await this.candleRepository.save(candle);
+      if (!saved) {
+        throw new InternalServerErrorException('Candle could not be created');
+      }
+      return saved;
+    } catch (error) {
+      console.error('Error in createCandle:', error);
+      throw error;
     }
-    return saved;
   }
 
   async findAll(): Promise<Candle[]> {
-    const candles = await this.candleRepository.find({});
-    if (!candles || candles.length === 0) {
-      throw new NotFoundException('No candles found');
+    try {
+      const candles = await this.candleRepository.find({});
+      if (!candles || candles.length === 0) {
+        throw new NotFoundException('No candles found');
+      }
+      return candles;
+    } catch (error) {
+      console.error('Error in findAll candles:', error);
+      throw error;
     }
-    return candles;
   }
 
   async findOne(id: string): Promise<Candle> {
-    const candle = await this.candleRepository.findOne({
-      where: { id },
-    });
-    if (!candle) {
-      throw new NotFoundException('Candle not found');
+    try {
+      const candle = await this.candleRepository.findOne({
+        where: { id },
+      });
+      if (!candle) {
+        throw new NotFoundException('Candle not found');
+      }
+      return candle;
+    } catch (error) {
+      console.error('Error in findOne candle:', error);
+      throw error;
     }
-    return candle;
   }
 
   async update(id: string, data: Partial<Candle>): Promise<Candle> {
-    const exists = await this.candleRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Candle not found');
+    try {
+      const exists = await this.candleRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Candle not found');
+      }
+      await this.candleRepository.update(id, data);
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in update candle:', error);
+      throw error;
     }
-    await this.candleRepository.update(id, data);
-    return this.findOne(id);
   }
 
   async remove(id: string): Promise<void> {
-    const exists = await this.candleRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Candle not found');
+    try {
+      const exists = await this.candleRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Candle not found');
+      }
+      await this.candleRepository.delete(id);
+    } catch (error) {
+      console.error('Error in remove candle:', error);
+      throw error;
     }
-    await this.candleRepository.delete(id);
   }
 
   async getContainers(): Promise<Container[]> {
-    return this.containerRepository.find();
+    try {
+      return await this.containerRepository.find();
+    } catch (error) {
+      console.error('Error in getContainers:', error);
+      throw error;
+    }
   }
 
   async getGifts(): Promise<Gift[]> {
-    return this.giftRepository.find();
+    try {
+      return await this.giftRepository.find();
+    } catch (error) {
+      console.error('Error in getGifts:', error);
+      throw error;
+    }
   }
 
   async assignAroma(candleId: string, aromaId: string): Promise<Candle> {
-    const candle = await this.candleRepository.findOne({ where: { id: candleId } });
-    if (!candle) {
-      throw new NotFoundException('Candle not found');
+    try {
+      const candle = await this.candleRepository.findOne({ where: { id: candleId } });
+      if (!candle) {
+        throw new NotFoundException('Candle not found');
+      }
+    
+      const aroma = await this.aromaRepository.findOne({ where: { id: aromaId } });
+      if (!aroma) {
+        throw new NotFoundException('Aroma not found');
+      }
+    
+      candle.aroma = aroma;
+      return await this.candleRepository.save(candle);
+    } catch (error) {
+      console.error('Error in assignAroma:', error);
+      throw error;
     }
-  
-    const aroma = await this.aromaRepository.findOne({ where: { id: aromaId } });
-    if (!aroma) {
-      throw new NotFoundException('Aroma not found');
-    }
-  
-    candle.aroma = aroma;
-    return this.candleRepository.save(candle);
   }
 
   async assignContainer(candleId: string, containerId: string): Promise<Candle> {
-    const candle = await this.candleRepository.findOne({ where: { id: candleId } });
-    if (!candle) {
-      throw new NotFoundException('Candle not found');
+    try {
+      const candle = await this.candleRepository.findOne({ where: { id: candleId } });
+      if (!candle) {
+        throw new NotFoundException('Candle not found');
+      }
+    
+      const container = await this.containerRepository.findOne({ where: { id: containerId } });
+      if (!container) {
+        throw new NotFoundException('Container not found');
+      }
+    
+      candle.container = container;
+      return await this.candleRepository.save(candle);
+    } catch (error) {
+      console.error('Error in assignContainer:', error);
+      throw error;
     }
-  
-    const container = await this.containerRepository.findOne({ where: { id: containerId } });
-    if (!container) {
-      throw new NotFoundException('Container not found');
-    }
-  
-    candle.container = container;
-    return this.candleRepository.save(candle);
   }
 }

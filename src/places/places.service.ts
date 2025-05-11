@@ -17,44 +17,69 @@ export class PlacesService {
   ) {}
 
   async create(createPlaceDto: CreatePlaceDto): Promise<Place> {
-    const place = this.placeRepository.create(createPlaceDto);
-    const saved = await this.placeRepository.save(place);
-    if (!saved) {
-      throw new InternalServerErrorException('Place could not be created');
+    try {
+      const place = this.placeRepository.create(createPlaceDto);
+      const saved = await this.placeRepository.save(place);
+      if (!saved) {
+        throw new InternalServerErrorException('Place could not be created');
+      }
+      return saved;
+    } catch (error) {
+      console.error('Error in create place:', error);
+      throw error;
     }
-    return saved;
   }
 
   async findAll(): Promise<Place[]> {
-    const places = await this.placeRepository.find({});
-    if (!places || places.length === 0) {
-      throw new NotFoundException('No places found');
+    try {
+      const places = await this.placeRepository.find({});
+      if (!places || places.length === 0) {
+        throw new NotFoundException('No places found');
+      }
+      return places;
+    } catch (error) {
+      console.error('Error in findAll places:', error);
+      throw error;
     }
-    return places;
   }
 
   async findOne(id: string): Promise<Place> {
-    const place = await this.placeRepository.findOne({ where: { id } });
-    if (!place) {
-      throw new NotFoundException('Place not found');
+    try {
+      const place = await this.placeRepository.findOne({ where: { id } });
+      if (!place) {
+        throw new NotFoundException('Place not found');
+      }
+      return place;
+    } catch (error) {
+      console.error('Error in findOne place:', error);
+      throw error;
     }
-    return place;
   }
 
   async update(id: string, updatePlaceDto: UpdatePlaceDto): Promise<Place> {
-    const exists = await this.placeRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Place not found');
+    try {
+      const exists = await this.placeRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Place not found');
+      }
+      await this.placeRepository.update(id, updatePlaceDto);
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in update place:', error);
+      throw error;
     }
-    await this.placeRepository.update(id, updatePlaceDto);
-    return this.findOne(id);
   }
 
   async remove(id: string): Promise<void> {
-    const exists = await this.placeRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Place not found');
+    try {
+      const exists = await this.placeRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Place not found');
+      }
+      await this.placeRepository.delete(id);
+    } catch (error) {
+      console.error('Error in remove place:', error);
+      throw error;
     }
-    await this.placeRepository.delete(id);
   }
 }

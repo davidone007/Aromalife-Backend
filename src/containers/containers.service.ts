@@ -15,47 +15,68 @@ export class ContainersService {
   ) {}
 
   async create(createContainerDto: Partial<Container>): Promise<Container> {
-    const container = this.containerRepository.create(createContainerDto);
-    const saved = await this.containerRepository.save(container);
-    if (!saved) {
-      throw new InternalServerErrorException('Container could not be created');
+    try {
+      const container = this.containerRepository.create(createContainerDto);
+      const saved = await this.containerRepository.save(container);
+      if (!saved) {
+        throw new InternalServerErrorException('Container could not be created');
+      }
+      return saved;
+    } catch (error) {
+      console.error('Error in create container:', error);
+      throw error;
     }
-    return saved;
   }
 
   async findAll(): Promise<Container[]> {
-    const containers = await this.containerRepository.find({});
-    if (!containers || containers.length === 0) {
-      throw new NotFoundException('No containers found');
+    try {
+      const containers = await this.containerRepository.find({});
+      if (!containers || containers.length === 0) {
+        throw new NotFoundException('No containers found');
+      }
+      return containers;
+    } catch (error) {
+      console.error('Error in findAll containers:', error);
+      throw error;
     }
-    return containers;
   }
 
   async findOne(id: string): Promise<Container> {
-    const container = await this.containerRepository.findOne({ where: { id } });
-    if (!container) {
-      throw new NotFoundException('Container not found');
+    try {
+      const container = await this.containerRepository.findOne({ where: { id } });
+      if (!container) {
+        throw new NotFoundException('Container not found');
+      }
+      return container;
+    } catch (error) {
+      console.error('Error in findOne container:', error);
+      throw error;
     }
-    return container;
   }
 
-  async update(
-    id: string,
-    updateContainerDto: Partial<Container>,
-  ): Promise<Container> {
-    const exists = await this.containerRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Container not found');
+  async update(id: string, data: Partial<Container>): Promise<Container> {
+    try {
+      const exists = await this.containerRepository.findOne({ where: { id } });
+      if (!exists) {
+        throw new NotFoundException('Container not found');
+      }
+      await this.containerRepository.update(id, data);
+      return this.findOne(id);
+    } catch (error) {
+      console.error('Error in update container:', error);
+      throw error;
     }
-    await this.containerRepository.update(id, updateContainerDto);
-    return this.findOne(id);
   }
 
   async remove(id: string): Promise<void> {
-    const exists = await this.containerRepository.findOne({ where: { id } });
-    if (!exists) {
-      throw new NotFoundException('Container not found');
+    try {
+      const result = await this.containerRepository.delete(id);
+      if (result.affected === 0) {
+        throw new NotFoundException('Container not found');
+      }
+    } catch (error) {
+      console.error('Error in remove container:', error);
+      throw error;
     }
-    await this.containerRepository.delete(id);
   }
 }

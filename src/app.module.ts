@@ -32,7 +32,7 @@ import { OrderItemModule } from './order-items/order-items.module';
             type: 'postgres',
             url: configService.get('DATABASE_URL'),
             entities: ['dist/**/*.entity{.ts,.js}'],
-            synchronize: false, // Importante: synchronize debe ser false en producción
+            synchronize: true, 
             ssl: {
               rejectUnauthorized: false // Necesario para algunas plataformas cloud
             },

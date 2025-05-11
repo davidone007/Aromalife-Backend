@@ -35,7 +35,8 @@ import { OrderItemModule } from './order-items/order-items.module';
             synchronize: false, // Importante: synchronize debe ser false en producción
             ssl: {
               rejectUnauthorized: false // Necesario para algunas plataformas cloud
-            }
+            },
+            logging: false,
           }
         }
 
@@ -48,7 +49,7 @@ import { OrderItemModule } from './order-items/order-items.module';
           database: configService.get('DB_DATABASE'),
           entities: [__dirname + '/**/*.entity{.ts,.js}'],
           synchronize: true,
-          //logging: true,  //Esto se habilita por si necesitas ver los logs de las consultas SQL
+          logging: true
         }
       },
       inject: [ConfigService],

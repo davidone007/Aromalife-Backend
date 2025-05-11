@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="172" failures="28" errors="0" time="28.372">
+  <testsuite name="AiController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="18.144" tests="3">
+    <testcase classname="AiController" name="should be defined" time="0.079">
+    </testcase>
+    <testcase classname="AiController &gt; generateText" name="should call service.generateText with the prompt" time="0.07">
+    </testcase>
+    <testcase classname="AiController &gt; generate" name="should call service.generateImage with the prompt" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="GiftsService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="21.89" tests="9">
+    <testcase classname="GiftsService" name="should be defined" time="0.045">
+    </testcase>
+    <testcase classname="GiftsService &gt; create" name="should create a new gift" time="0.019">
+    </testcase>
+    <testcase classname="GiftsService &gt; findAll" name="should return an array of gifts" time="0.017">
+    </testcase>
+    <testcase classname="GiftsService &gt; findAll" name="should throw NotFoundException if no gifts are found" time="0.026">
+    </testcase>
+    <testcase classname="GiftsService &gt; findOne" name="should return a single gift" time="0.005">
+    </testcase>
+    <testcase classname="GiftsService &gt; findOne" name="should throw NotFoundException if gift is not found" time="0.013">
+    </testcase>
+    <testcase classname="GiftsService &gt; update" name="should update a gift" time="0.02">
+    </testcase>
+    <testcase classname="GiftsService &gt; update" name="should throw NotFoundException if gift is not found" time="0.03">
+    </testcase>
+    <testcase classname="GiftsService &gt; remove" name="should delete a gift" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="OrdersService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:09" time="0.213" tests="1">
+    <testcase classname="OrdersService" name="should always pass" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="IntendedImpactService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="22.297" tests="8">
+    <testcase classname="IntendedImpactService" name="should be defined" time="0.056">
+    </testcase>
+    <testcase classname="IntendedImpactService &gt; create" name="should create and return an intended impact" time="0.028">
+    </testcase>
+    <testcase classname="IntendedImpactService &gt; findAll" name="should return all intended impacts" time="0.004">
+    </testcase>
+    <testcase classname="IntendedImpactService &gt; findAll" name="should throw if no intended impacts found" time="0.038">
+    </testcase>
+    <testcase classname="IntendedImpactService &gt; findOne" name="should return one intended impact" time="0.02">
+    </testcase>
+    <testcase classname="IntendedImpactService &gt; findOne" name="should throw if intended impact not found" time="0.005">
+    </testcase>
+    <testcase classname="IntendedImpactService &gt; update" name="should update and return the intended impact" time="0.003">
+    </testcase>
+    <testcase classname="IntendedImpactService &gt; remove" name="should delete the intended impact" time="0.021">
+    </testcase>
+  </testsuite>
+  <testsuite name="AromasController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="22.326" tests="6">
+    <testcase classname="AromasController" name="should be defined" time="0.083">
+    </testcase>
+    <testcase classname="AromasController &gt; findAll" name="should return an array of aromas" time="0.007">
+    </testcase>
+    <testcase classname="AromasController &gt; findOne" name="should return an aroma" time="0.005">
+    </testcase>
+    <testcase classname="AromasController &gt; create" name="should create an aroma" time="0.023">
+    </testcase>
+    <testcase classname="AromasController &gt; update" name="should update an aroma" time="0.006">
+    </testcase>
+    <testcase classname="AromasController &gt; remove" name="should remove an aroma" time="0.012">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="22.894" tests="6">
+    <testcase classname="AuthService" name="should be defined" time="0.047">
+    </testcase>
+    <testcase classname="AuthService &gt; createUser" name="should create a new user" time="0.077">
+    </testcase>
+    <testcase classname="AuthService &gt; createUser" name="should throw error when user creation fails" time="0.078">
+    </testcase>
+    <testcase classname="AuthService &gt; loginUser" name="should login user with valid credentials" time="0.072">
+    </testcase>
+    <testcase classname="AuthService &gt; loginUser" name="should throw UnauthorizedException with invalid email" time="0.004">
+    </testcase>
+    <testcase classname="AuthService &gt; loginUser" name="should throw UnauthorizedException with invalid password" time="0.066">
+    </testcase>
+  </testsuite>
+  <testsuite name="CartController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="23.27" tests="8">
+    <testcase classname="CartController" name="should be defined" time="0.092">
+    </testcase>
+    <testcase classname="CartController" name="should call service.create on create" time="0.008">
+    </testcase>
+    <testcase classname="CartController" name="should call service.findOne on findOne" time="0.006">
+    </testcase>
+    <testcase classname="CartController" name="should call service.update on update" time="0.004">
+    </testcase>
+    <testcase classname="CartController" name="should call service.remove on remove" time="0.009">
+    </testcase>
+    <testcase classname="CartController" name="should call service.addItem on addItem" time="0.004">
+    </testcase>
+    <testcase classname="CartController" name="should call service.updateItem on updateItem" time="0.003">
+    </testcase>
+    <testcase classname="CartController" name="should call service.removeItem on removeItem" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="GiftsController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="23.416" tests="6">
+    <testcase classname="GiftsController" name="should be defined" time="0.045">
+    </testcase>
+    <testcase classname="GiftsController &gt; findAll" name="should return an array of gifts" time="0.006">
+    </testcase>
+    <testcase classname="GiftsController &gt; findOne" name="should return a gift" time="0.005">
+    </testcase>
+    <testcase classname="GiftsController &gt; create" name="should create a gift" time="0.005">
+    </testcase>
+    <testcase classname="GiftsController &gt; update" name="should update a gift" time="0.003">
+    </testcase>
+    <testcase classname="GiftsController &gt; remove" name="should remove a gift" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="MainOptionsController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="23.46" tests="6">
+    <testcase classname="MainOptionsController" name="should be defined" time="0.054">
+    </testcase>
+    <testcase classname="MainOptionsController" name="should create a main option" time="0.007">
+    </testcase>
+    <testcase classname="MainOptionsController" name="should return all main options" time="0.003">
+    </testcase>
+    <testcase classname="MainOptionsController" name="should return a single main option by id" time="0.003">
+    </testcase>
+    <testcase classname="MainOptionsController" name="should update a main option" time="0.004">
+    </testcase>
+    <testcase classname="MainOptionsController" name="should delete a main option" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="IntendedImpactController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="23.503" tests="6">
+    <testcase classname="IntendedImpactController" name="should be defined" time="0.06">
+    </testcase>
+    <testcase classname="IntendedImpactController" name="should create an intended impact" time="0.007">
+    </testcase>
+    <testcase classname="IntendedImpactController" name="should return all intended impacts" time="0.006">
+    </testcase>
+    <testcase classname="IntendedImpactController" name="should return one intended impact by id" time="0.004">
+    </testcase>
+    <testcase classname="IntendedImpactController" name="should update an intended impact" time="0.005">
+    </testcase>
+    <testcase classname="IntendedImpactController" name="should delete an intended impact" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="23.576" tests="3">
+    <testcase classname="AuthController" name="should be defined" time="0.07">
+    </testcase>
+    <testcase classname="AuthController &gt; createUser" name="should create a new user" time="0.006">
+    </testcase>
+    <testcase classname="AuthController &gt; loginUser" name="should login user with valid credentials" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="MainOptionsService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:09" time="1.338" tests="10">
+    <testcase classname="MainOptionsService" name="should create a MainOption" time="0.01">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should throw InternalServerErrorException on failed save" time="0.013">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should return all main options" time="0.002">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should throw NotFoundException when no main options found" time="0.004">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should find one main option" time="0.002">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should throw NotFoundException when main option not found" time="0.003">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should update a main option" time="0.002">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should throw NotFoundException when updating non-existent option" time="0.002">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should remove a main option" time="0.004">
+    </testcase>
+    <testcase classname="MainOptionsService" name="should throw NotFoundException when removing non-existent option" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="AromasService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:09" time="1.343" tests="9">
+    <testcase classname="AromasService" name="should be defined" time="0.007">
+    </testcase>
+    <testcase classname="AromasService &gt; create" name="should create a new aroma" time="0.004">
+    </testcase>
+    <testcase classname="AromasService &gt; findAll" name="should return an array of aromas" time="0.002">
+    </testcase>
+    <testcase classname="AromasService &gt; findOne" name="should return a single aroma" time="0.002">
+    </testcase>
+    <testcase classname="AromasService &gt; findOne" name="should throw NotFoundException when aroma not found" time="0.027">
+    </testcase>
+    <testcase classname="AromasService &gt; update" name="should update an aroma" time="0.01">
+    </testcase>
+    <testcase classname="AromasService &gt; update" name="should throw NotFoundException when updating non-existent aroma" time="0.013">
+    </testcase>
+    <testcase classname="AromasService &gt; remove" name="should remove an aroma" time="0.003">
+    </testcase>
+    <testcase classname="AromasService &gt; remove" name="should throw NotFoundException when removing non-existent aroma" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="PlacesController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:09:47" time="23.907" tests="6">
+    <testcase classname="PlacesController" name="should be defined" time="0.06">
+    </testcase>
+    <testcase classname="PlacesController" name="should create a place" time="0.007">
+    </testcase>
+    <testcase classname="PlacesController" name="should return all places" time="0.004">
+    </testcase>
+    <testcase classname="PlacesController" name="should return one place" time="0.003">
+    </testcase>
+    <testcase classname="PlacesController" name="should update a place" time="0.004">
+    </testcase>
+    <testcase classname="PlacesController" name="should remove a place" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="ReviewController" errors="0" failures="6" skipped="0" timestamp="2025-05-11T04:10:09" time="1.842" tests="6">
+    <testcase classname="ReviewController" name="should be defined" time="0.017">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.controller.spec.ts:87:35)</failure>
+    </testcase>
+    <testcase classname="ReviewController &gt; findAll" name="should return an array of reviews" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.controller.spec.ts:87:35)</failure>
+    </testcase>
+    <testcase classname="ReviewController &gt; findOne" name="should return a review" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.controller.spec.ts:87:35)</failure>
+    </testcase>
+    <testcase classname="ReviewController &gt; create" name="should create a review" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.controller.spec.ts:87:35)</failure>
+    </testcase>
+    <testcase classname="ReviewController &gt; update" name="should update a review" time="0.004">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.controller.spec.ts:87:35)</failure>
+    </testcase>
+    <testcase classname="ReviewController &gt; remove" name="should remove a review" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.controller.spec.ts:87:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="ContainersController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:10" time="1.521" tests="6">
+    <testcase classname="ContainersController" name="should be defined" time="0.092">
+    </testcase>
+    <testcase classname="ContainersController &gt; findAll" name="should return an array of containers" time="0.006">
+    </testcase>
+    <testcase classname="ContainersController &gt; findOne" name="should return a container" time="0.006">
+    </testcase>
+    <testcase classname="ContainersController &gt; create" name="should create a container" time="0.005">
+    </testcase>
+    <testcase classname="ContainersController &gt; update" name="should update a container" time="0.006">
+    </testcase>
+    <testcase classname="ContainersController &gt; remove" name="should remove a container" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="ContainersService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:10" time="1.291" tests="9">
+    <testcase classname="ContainersService" name="should be defined" time="0.005">
+    </testcase>
+    <testcase classname="ContainersService &gt; create" name="should create a container" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService &gt; findAll" name="should return an array of containers" time="0.003">
+    </testcase>
+    <testcase classname="ContainersService &gt; findOne" name="should return a container" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService &gt; findOne" name="should throw NotFoundException if container not found" time="0.097">
+    </testcase>
+    <testcase classname="ContainersService &gt; update" name="should update a container" time="0.012">
+    </testcase>
+    <testcase classname="ContainersService &gt; update" name="should throw NotFoundException if container not found" time="0.004">
+    </testcase>
+    <testcase classname="ContainersService &gt; remove" name="should remove a container" time="0.004">
+    </testcase>
+    <testcase classname="ContainersService &gt; remove" name="should throw NotFoundException if container not found" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:11" time="0.668" tests="1">
+    <testcase classname="AppController &gt; root" name="should return &quot;Backend is running in NestJS!&quot;" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="CandlesService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:10" time="1.441" tests="9">
+    <testcase classname="CandlesService" name="should be defined" time="0.013">
+    </testcase>
+    <testcase classname="CandlesService &gt; createCandle" name="should create a new candle" time="0.005">
+    </testcase>
+    <testcase classname="CandlesService &gt; findAll" name="should return an array of candles" time="0.003">
+    </testcase>
+    <testcase classname="CandlesService &gt; findOne" name="should return a single candle" time="0.005">
+    </testcase>
+    <testcase classname="CandlesService &gt; findOne" name="should throw error when candle not found" time="0.016">
+    </testcase>
+    <testcase classname="CandlesService &gt; update" name="should update a candle" time="0.004">
+    </testcase>
+    <testcase classname="CandlesService &gt; remove" name="should remove a candle" time="0.003">
+    </testcase>
+    <testcase classname="CandlesService &gt; getContainers" name="should return an array of containers" time="0.004">
+    </testcase>
+    <testcase classname="CandlesService &gt; getGifts" name="should return an array of gifts" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="PlacesService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:10" time="1.424" tests="11">
+    <testcase classname="PlacesService" name="should be defined" time="0.014">
+    </testcase>
+    <testcase classname="PlacesService" name="should create a place" time="0.009">
+    </testcase>
+    <testcase classname="PlacesService" name="should throw if save fails" time="0.069">
+    </testcase>
+    <testcase classname="PlacesService" name="should return all places" time="0.01">
+    </testcase>
+    <testcase classname="PlacesService" name="should throw if no places are found" time="0.013">
+    </testcase>
+    <testcase classname="PlacesService" name="should return one place" time="0.004">
+    </testcase>
+    <testcase classname="PlacesService" name="should throw if place not found" time="0.004">
+    </testcase>
+    <testcase classname="PlacesService" name="should update a place" time="0.004">
+    </testcase>
+    <testcase classname="PlacesService" name="should throw if updating non-existing place" time="0.003">
+    </testcase>
+    <testcase classname="PlacesService" name="should remove a place" time="0.005">
+    </testcase>
+    <testcase classname="PlacesService" name="should throw if removing non-existing place" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="AiService" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:10" time="1.617" tests="8">
+    <testcase classname="AiService &gt; generateText" name="should return text from Gemini API" time="0.019">
+    </testcase>
+    <testcase classname="AiService &gt; generateText" name="should throw specific error message if API responds with error" time="0.052">
+    </testcase>
+    <testcase classname="AiService &gt; generateText" name="should throw default message if no error detail is returned" time="0.003">
+    </testcase>
+    <testcase classname="AiService &gt; generateText" name="should throw internal error if no response is returned" time="0.002">
+    </testcase>
+    <testcase classname="AiService &gt; generateImage" name="should return image URL from API" time="0.003">
+    </testcase>
+    <testcase classname="AiService &gt; generateImage" name="should throw 400 BadRequestException" time="0.033">
+    </testcase>
+    <testcase classname="AiService &gt; generateImage" name="should throw InternalServerErrorException when no image returned" time="0.009">
+    </testcase>
+    <testcase classname="AiService &gt; generateImage" name="should throw ServiceUnavailable if no response" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="ReviewService" errors="0" failures="8" skipped="0" timestamp="2025-05-11T04:10:10" time="1.457" tests="8">
+    <testcase classname="ReviewService" name="should be defined" time="0.008">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+    <testcase classname="ReviewService &gt; create" name="should create a new review" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+    <testcase classname="ReviewService &gt; findAll" name="should return all reviews when no filter is provided" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+    <testcase classname="ReviewService &gt; findOne" name="should return a single review" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+    <testcase classname="ReviewService &gt; findOne" name="should throw NotFoundException when review not found" time="0.004">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+    <testcase classname="ReviewService &gt; update" name="should update a review" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+    <testcase classname="ReviewService &gt; remove" name="should remove a review" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+    <testcase classname="ReviewService &gt; remove" name="should throw NotFoundException when removing non-existent review" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the ReviewService (ReviewRepository, ?). Please make sure that the argument &quot;OrderRepository&quot; at index [1] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;OrderRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;OrderRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;OrderRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\reviews\reviews.service.spec.ts:38:35)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="CandlesController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:11" time="1.606" tests="6">
+    <testcase classname="CandlesController" name="should be defined" time="0.01">
+    </testcase>
+    <testcase classname="CandlesController &gt; findAll" name="should return an array of candles" time="0.004">
+    </testcase>
+    <testcase classname="CandlesController &gt; findOne" name="should return a candle" time="0.004">
+    </testcase>
+    <testcase classname="CandlesController &gt; create" name="should create a candle" time="0.004">
+    </testcase>
+    <testcase classname="CandlesController &gt; update" name="should update a candle" time="0.004">
+    </testcase>
+    <testcase classname="CandlesController &gt; remove" name="should remove a candle" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="OrdersController" errors="0" failures="0" skipped="0" timestamp="2025-05-11T04:10:11" time="1.682" tests="7">
+    <testcase classname="OrdersController" name="should be defined" time="0.007">
+    </testcase>
+    <testcase classname="OrdersController &gt; findAll" name="should return all orders" time="0.003">
+    </testcase>
+    <testcase classname="OrdersController &gt; findOne" name="should return a single order" time="0.003">
+    </testcase>
+    <testcase classname="OrdersController &gt; update" name="should update an order" time="0.003">
+    </testcase>
+    <testcase classname="OrdersController &gt; remove" name="should delete an order" time="0.004">
+    </testcase>
+    <testcase classname="OrdersController &gt; updateStatus" name="should update the status of an order" time="0.003">
+    </testcase>
+    <testcase classname="OrdersController &gt; processPayment" name="should process payment for an order" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="CartService" errors="0" failures="14" skipped="0" timestamp="2025-05-11T04:10:05" time="7.314" tests="14">
+    <testcase classname="CartService" name="should be defined" time="0.008">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; create" name="should create and save a cart" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; findOne" name="should return a cart if found" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; findOne" name="should throw if not found" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; update" name="should update and save a cart" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; update" name="should throw if not found" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; remove" name="should delete a cart if found" time="0.001">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; remove" name="should throw if not found" time="0.001">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; addItem" name="should add an item to a cart" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; addItem" name="should throw if cart not found" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; updateItem" name="should update a cart item" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; updateItem" name="should throw if cart item not found" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; removeItem" name="should remove a cart item" time="0.002">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+    <testcase classname="CartService &gt; removeItem" name="should throw if cart item not found" time="0.003">
+      <failure>Error: Nest can&apos;t resolve dependencies of the CartService (CartRepository, CartItemRepository, GiftRepository, CandleRepository, ?). Please make sure that the argument &quot;UserRepository&quot; at index [4] is available in the RootTestModule context.
+
+Potential solutions:
+- Is RootTestModule a valid NestJS module?
+- If &quot;UserRepository&quot; is a provider, is it part of the current RootTestModule?
+- If &quot;UserRepository&quot; is exported from a separate @Module, is that module imported within RootTestModule?
+  @Module({
+    imports: [ /* the Module containing &quot;UserRepository&quot; */ ]
+  })
+
+    at TestingInjector.lookupComponentInParentModules (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at TestingInjector.resolveComponentInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-injector.js:19:45)
+    at resolveParam (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 4)
+    at TestingInjector.resolveConstructorParams (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at TestingInjector.loadInstance (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at TestingInjector.loadProvider (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at TestingInstanceLoader.createInstancesOfProviders (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:55:9)
+    at C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:40:13
+    at async Promise.all (index 1)
+    at TestingInstanceLoader.createInstances (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:39:9)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\core\injector\instance-loader.js:22:13)
+    at TestingInstanceLoader.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-instance-loader.js:9:9)
+    at TestingModuleBuilder.createInstancesOfDependencies (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:118:9)
+    at TestingModuleBuilder.compile (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\node_modules\@nestjs\testing\testing-module.builder.js:74:9)
+    at Object.&lt;anonymous&gt; (C:\Users\nicol\OneDrive - Universidad Icesi\University\7 Semestre\CompuNet III\project-backend-aromalife-adn\test\cart\cart.service.spec.ts:26:35)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

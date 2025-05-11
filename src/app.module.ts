@@ -24,17 +24,33 @@ import { OrderItemModule } from './order-items/order-items.module';
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => ({
-        type: 'postgres',
-        host: configService.get('DB_HOST'),
-        port: +configService.get('DB_PORT'),
-        username: configService.get('DB_USERNAME'),
-        password: configService.get('DB_PASSWORD'),
-        database: configService.get('DB_DATABASE'),
-        entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: process.env.NODE_ENV !== 'production',
-        //logging: true,  //Esto se habilita por si necesitas ver los logs de las consultas SQL
-      }),
+      useFactory: (configService: ConfigService) => {
+        const isProd = process.env.NODE_ENV === 'production';
+        
+        if (isProd) {
+          return {
+            type: 'postgres',
+            url: configService.get('DATABASE_URL'),
+            entities: [__dirname + '/**/*.entity{.ts,.js}'],
+            synchronize: false, // Importante: synchronize debe ser false en producción
+            ssl: {
+              rejectUnauthorized: false // Necesario para algunas plataformas cloud
+            }
+          }
+        }
+
+        return {
+          type: 'postgres',
+          host: configService.get('DB_HOST'),
+          port: +configService.get('DB_PORT'),
+          username: configService.get('DB_USERNAME'),
+          password: configService.get('DB_PASSWORD'),
+          database: configService.get('DB_DATABASE'),
+          entities: [__dirname + '/**/*.entity{.ts,.js}'],
+          synchronize: true,
+          //logging: true,  //Esto se habilita por si necesitas ver los logs de las consultas SQL
+        }
+      },
       inject: [ConfigService],
     }),
     AuthModule,

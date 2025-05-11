@@ -31,7 +31,7 @@ import { OrderItemModule } from './order-items/order-items.module';
           return {
             type: 'postgres',
             url: configService.get('DATABASE_URL'),
-            entities: [__dirname + '/**/*.entity{.ts,.js}'],
+            entities: ['dist/**/*.entity{.ts,.js}'],
             synchronize: false, // Importante: synchronize debe ser false en producción
             ssl: {
               rejectUnauthorized: false // Necesario para algunas plataformas cloud

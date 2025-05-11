@@ -12,8 +12,8 @@ export default new DataSource(
     ? {
         type: 'postgres',
         url: configService.get('DATABASE_URL'),
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
+        entities: ['dist/**/*.entity{.ts,.js}'],
+        migrations: ['dist/db/migrations/*{.ts,.js}'],
         synchronize: false,
         ssl: {
           rejectUnauthorized: false
@@ -28,7 +28,7 @@ export default new DataSource(
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_DATABASE'),
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
+        migrations: [__dirname + '/../db/migrations/*{.ts,.js}'],
         synchronize: false,
         logging: false,
       }

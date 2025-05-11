@@ -27,7 +27,6 @@ export class AuthController {
   @ApiOperation({ summary: 'Register a new user' })
   @ApiResponse({ status: 201, description: 'User successfully registered', type: User })
   @ApiResponse({ status: 400, description: 'Bad request' })
-  @Auth(ValidRoles.admin)
   async createUser(@Body() createUserDto: CreateUserDto) {
     return this.authService.createUser(createUserDto);
   }

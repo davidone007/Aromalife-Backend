@@ -31,7 +31,7 @@ import { OrderItemModule } from './order-items/order-items.module';
           return {
             type: 'postgres',
             url: configService.get('DATABASE_URL'),
-            entities: ['dist/**/*.entity{.ts,.js}'],
+            entities: ['dist/src/**/*.entity{.ts,.js}'],
             synchronize: true, 
             ssl: {
               rejectUnauthorized: false // Necesario para algunas plataformas cloud
@@ -47,7 +47,7 @@ import { OrderItemModule } from './order-items/order-items.module';
           username: configService.get('DB_USERNAME'),
           password: configService.get('DB_PASSWORD'),
           database: configService.get('DB_DATABASE'),
-          entities: ['/**/*.entity{.ts,.js}'],
+          entities: ['src/**/*.entity{.ts,.js}'],
           synchronize: true,
           logging: true
         }

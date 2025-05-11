@@ -66,7 +66,9 @@ export class AuthService {
       if (error instanceof ConflictException) {
         throw error;
       }
+      console.log(error);
       throw new Error('Error creating client');
+     
     }
   }
   

@@ -9,6 +9,7 @@ import { Candle } from '../entities/candle.entity';
 import { Container } from '../entities/container.entity';
 import { Aroma } from '../entities/aroma.entity';
 import { Gift } from '../entities/gift.entity';
+import { User } from '../auth/entity/user.entity';
 
 @Injectable()
 export class CandlesService {
@@ -21,6 +22,8 @@ export class CandlesService {
     private readonly aromaRepository: Repository<Aroma>,
     @InjectRepository(Gift)
     private readonly giftRepository: Repository<Gift>,
+    @InjectRepository(User)
+    private readonly userRepository: Repository<User>,
   ) {}
 
   async createCandle(data: Partial<Candle>): Promise<Candle> {
@@ -148,5 +151,20 @@ export class CandlesService {
       console.error('Error in assignContainer:', error);
       throw error;
     }
+  }
+
+  async assignCandleToUser(candleId: string, userId: string): Promise<Candle> {
+    const candle = await this.candleRepository.findOne({ where: { id: candleId } });
+    if (!candle) {
+      throw new Error('Candle not found');
+    }
+  
+    const user = await this.userRepository.findOne({ where: { id: userId } });
+    if (!user) {
+      throw new Error('User not found');
+    }
+  
+    candle.user = user;
+    return this.candleRepository.save(candle);
   }
 }

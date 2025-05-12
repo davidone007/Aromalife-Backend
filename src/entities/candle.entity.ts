@@ -11,6 +11,7 @@ import { Aroma } from './aroma.entity';
 import { Order } from './order.entity';
 import { CartItem } from './cart-item.entity';
 import { OrderItem } from './order-item.entity';
+import { User } from '../auth/entity/user.entity';
 import { ApiProperty } from '@nestjs/swagger';
 
 @Entity()
@@ -47,10 +48,6 @@ export class Candle {
   @Column({ nullable: true })
   qrUrl: string;
 
-  @ApiProperty({ description: 'ID of the associated order', required: false })
-  @Column({ nullable: true })
-  orderId: string;
-
   @ApiProperty({ description: 'Date when the candle was created' })
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
@@ -74,4 +71,7 @@ export class Candle {
   @ApiProperty({ description: 'Associated cart items' })
   @OneToMany(() => CartItem, (cartItems) => cartItems.candle)
   cartItems: CartItem[];
+
+  @ManyToOne(() => User, (user) => user.candles)
+  user: User;
 }

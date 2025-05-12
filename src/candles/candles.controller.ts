@@ -107,4 +107,14 @@ export class CandlesController {
   ): Promise<Candle> {
     return this.candlesService.assignContainer(candleId, containerId);
   }
+
+  // Assigning a user to a candle
+  @Patch(':candleId/assign-user/:userId')
+  @Auth(ValidRoles.admin, ValidRoles.manager, ValidRoles.client)
+  async assignCandleToUser(
+    @Param('candleId') candleId: string,
+    @Param('userId') userId: string,
+  ): Promise<Candle> {
+    return this.candlesService.assignCandleToUser(candleId, userId);
+  }
 }

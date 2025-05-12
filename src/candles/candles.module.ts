@@ -8,11 +8,12 @@ import { Aroma } from '../entities/aroma.entity';
 import { Gift } from '../entities/gift.entity';
 import { Order } from '../entities/order.entity';
 import { PassportModule } from '@nestjs/passport';
+import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Candle, Container, Aroma, Gift, Order]), PassportModule.register({ defaultStrategy: 'jwt' })],
+  imports: [TypeOrmModule.forFeature([Candle, Container, Aroma, Gift, Order]), PassportModule.register({ defaultStrategy: 'jwt' }), AuthModule],
   controllers: [CandlesController],
   providers: [CandlesService],
-  exports: [CandlesService],
+  exports: [CandlesService, TypeOrmModule],
 })
 export class CandlesModule {}

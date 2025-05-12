@@ -109,7 +109,7 @@ export class AuthController {
   @ApiOperation({ summary: 'Remove a user' })
   @ApiResponse({ status: 200, description: 'User removed successfully' })
   @ApiResponse({ status: 404, description: 'User not found' })
-  @Auth(ValidRoles.admin)
+  @Auth(ValidRoles.admin, ValidRoles.client)
   async removeUser(@Param('id') id: string) {
     return this.authService.remove(id);
   }

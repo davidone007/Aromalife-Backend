@@ -2,6 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Order } from '../../entities/order.entity';
 import { Review } from '../../entities/review.entity';
 import { Cart } from '../../entities/cart.entity';
+import { Candle } from '../../entities/candle.entity';
 
 @Entity()
 export class User {
@@ -23,9 +24,12 @@ export class User {
   @Column('bool', { default: true })
   isActive: boolean;
 
-  @OneToMany(() => Order, (order) => order.user)
+  @OneToMany(() => Order, (order) => order.userId)
   orders: Order[];
 
-  @OneToMany(() => Cart, (cart) => cart.user)
+  @OneToMany(() => Cart, (cart) => cart.userId)
   carts: Cart[];
+
+  @OneToMany(() => Candle, (candle) => candle.user)
+  candles: Candle[];
 }

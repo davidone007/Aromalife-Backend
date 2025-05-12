@@ -10,6 +10,6 @@ import { PassportModule } from '@nestjs/passport';
   imports: [TypeOrmModule.forFeature([Gift, Order]), PassportModule.register({ defaultStrategy: 'jwt' })],
   controllers: [GiftsController],
   providers: [GiftsService],
-  exports: [GiftsService],
+  exports: [GiftsService, TypeOrmModule],
 })
 export class GiftsModule {}

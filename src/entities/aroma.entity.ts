@@ -52,7 +52,7 @@ export class Aroma {
   updatedAt: Date;
 
   @ApiProperty({ description: 'Associated intended impacts', type: () => [IntendedImpact] })
-  @ManyToMany(() => IntendedImpact, (intendedImpact) => intendedImpact.aromas)
+  @ManyToMany(() => IntendedImpact, (intendedImpact) => intendedImpact.aromas, { cascade: ['insert', 'update'] })
   @JoinTable()
   intendedImpacts: IntendedImpact[];
 

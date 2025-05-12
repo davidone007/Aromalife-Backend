@@ -26,9 +26,19 @@ export class CartService {
     private readonly userRepository: Repository<User>,
   ) {}
 
+    // En cart.service.ts
   async create(createCartDto: CreateCartDto): Promise<Cart> {
+    // Buscar el usuario primero
+    const user = await this.userRepository.findOne({ where: { id: createCartDto.userId } });
+    if (!user) throw new NotFoundException(`User Not Found with ID ${createCartDto.userId}`);
+    
+    // Crear el carrito con el usuario encontrado
     try {
-      const cart = this.cartRepository.create(createCartDto);
+      const cart = this.cartRepository.create({
+      userId: user,
+      checkedOut: createCartDto.checkedOut || false
+    });
+    
       return await this.cartRepository.save(cart);
     } catch (error) {
       console.error('Error in create cart:', error);
@@ -50,15 +60,33 @@ export class CartService {
     }
   }
 
-  async update(id: string, updateCartDto: UpdateCartDto): Promise<Cart> {
-    try {
-      const cart = await this.cartRepository.preload({ id, ...updateCartDto });
-      if (!cart) throw new NotFoundException('Cart not found');
-      return await this.cartRepository.save(cart);
-    } catch (error) {
-      console.error('Error in update cart:', error);
-      throw error;
+    async update(id: string, updateCartDto: UpdateCartDto): Promise<Cart> {
+    // Primero, busca el carrito existente
+    const existingCart = await this.cartRepository.findOne({ 
+      where: { id },
+      relations: ['userId'] // Carga la relación existente
+    });
+    if (!existingCart) throw new NotFoundException('Cart not found');
+    
+    // Crea un objeto para actualizar
+    const updateData: DeepPartial<Cart> = {};
+    
+    // Si hay checkedOut en el DTO, cópialo
+    if (updateCartDto.checkedOut !== undefined) {
+      updateData.checkedOut = updateCartDto.checkedOut;
     }
+    
+    // Si hay userId en el DTO, busca el usuario
+    if (updateCartDto.userId) {
+      const user = await this.userRepository.findOne({ where: { id: updateCartDto.userId } });
+      if (!user) throw new NotFoundException(`User not found with ID ${updateCartDto.userId}`);
+      updateData.userId = user;
+    }
+    
+    // Ahora actualiza el carrito
+    Object.assign(existingCart, updateData);
+    
+    return this.cartRepository.save(existingCart);
   }
 
   async remove(id: string): Promise<void> {
@@ -161,7 +189,7 @@ export class CartService {
         throw new NotFoundException('User not found');
       }
     
-      cart.user = user;
+      cart.userId = user;
       return await this.cartRepository.save(cart);
     } catch (error) {
       console.error('Error in assignUserToCart:', error);

@@ -135,7 +135,7 @@ export class OrdersService {
       throw new NotFoundException('User not found');
     }
   
-    order.user = user;
+    order.userId = user;
     return this.orderRepository.save(order);
   }
 }

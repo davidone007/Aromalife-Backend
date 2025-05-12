@@ -54,12 +54,12 @@ export class GiftsService {
 
   async update(id: string, data: Partial<Gift>): Promise<Gift> {
     try {
-      const exists = await this.giftRepository.findOne({ where: { id } });
-      if (!exists) {
+      const gift = await this.findOne(id);
+      if (!gift) {
         throw new NotFoundException('Gift not found');
       }
-      await this.giftRepository.update(id, data);
-      return this.findOne(id);
+      Object.assign(gift, data);
+      return await this.giftRepository.save(gift);
     } catch (error) {
       console.error('Error in update gift:', error);
       throw error;

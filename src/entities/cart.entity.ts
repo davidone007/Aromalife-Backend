@@ -16,7 +16,7 @@ export class Cart {
   id: string;
 
   @ManyToOne(() => User, (user) => user.carts, { nullable: false })
-  user: User;
+  userId: User;
 
   @Column({ default: false })
   checkedOut: boolean;

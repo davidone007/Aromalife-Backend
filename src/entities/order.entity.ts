@@ -52,7 +52,7 @@ export class Order {
   reviews: Review[];
 
   @ManyToOne(() => User, (user) => user.orders)
-  user: User;
+  userId: User;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;

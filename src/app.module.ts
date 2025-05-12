@@ -16,6 +16,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CartItemModule } from './cart-item/cart-item.module';
 import { OrderItemModule } from './order-items/order-items.module';
+
+
 @Module({
   controllers: [AppController],
   imports: [
@@ -31,12 +33,12 @@ import { OrderItemModule } from './order-items/order-items.module';
           return {
             type: 'postgres',
             url: configService.get('DATABASE_URL'),
-            entities: ['dist/src/**/*.entity{.ts,.js}'],
+            entities: [__dirname + '/**/*.entity{.ts,.js}'],
             synchronize: true, 
             ssl: {
               rejectUnauthorized: false // Necesario para algunas plataformas cloud
             },
-            logging: false,
+            logging: true,
           }
         }
 
@@ -47,7 +49,7 @@ import { OrderItemModule } from './order-items/order-items.module';
           username: configService.get('DB_USERNAME'),
           password: configService.get('DB_PASSWORD'),
           database: configService.get('DB_DATABASE'),
-          entities: ['src/**/*.entity{.ts,.js}'],
+          entities: [__dirname + '/**/*.entity{.ts,.js}'],
           synchronize: true,
           logging: true
         }
@@ -67,6 +69,7 @@ import { OrderItemModule } from './order-items/order-items.module';
     AiModule,
     CartItemModule,
     OrderItemModule,
+
   ],
   providers: [AppService],
 })

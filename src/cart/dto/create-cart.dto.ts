@@ -1,13 +1,14 @@
-import { IsUUID, IsOptional, IsBoolean } from 'class-validator';
+import { IsUUID, IsOptional, IsBoolean, IsNotEmpty } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateCartDto {
   @ApiProperty({ description: 'ID of the user who owns this cart' })
   @IsUUID()
+  @IsNotEmpty()
   userId: string;
 
   @ApiProperty({ description: 'Whether the cart has been checked out', required: false, default: false })
-  @IsOptional()
+  @IsNotEmpty()
   @IsBoolean()
-  checkedOut?: boolean;
+  checkedOut: boolean;
 }

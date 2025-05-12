@@ -6,6 +6,7 @@ import {
   UpdateDateColumn,
   OneToMany,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { CartItem } from './cart-item.entity';
 import { User } from '../auth/entity/user.entity';
@@ -16,6 +17,7 @@ export class Cart {
   id: string;
 
   @ManyToOne(() => User, (user) => user.carts, { nullable: false })
+  @JoinColumn({ name: 'userId' })
   userId: User;
 
   @Column({ default: false })

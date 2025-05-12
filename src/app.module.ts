@@ -16,6 +16,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CartItemModule } from './cart-item/cart-item.module';
 import { OrderItemModule } from './order-items/order-items.module';
+import { CartModule } from './cart/cart.module';
 
 
 @Module({
@@ -69,7 +70,7 @@ import { OrderItemModule } from './order-items/order-items.module';
     AiModule,
     CartItemModule,
     OrderItemModule,
-
+    CartModule,
   ],
   providers: [AppService],
 })

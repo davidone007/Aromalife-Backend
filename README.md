@@ -44,7 +44,11 @@ Bienvenido al backend de **Aromalife**, una aplicación web diseñada para ofrec
    docker-compose up --build
    ```
 
-2. Acceder al API:
+2. Alimentar la base de datos:
+   - psql -h localhost -U postgres -d postgres -f scripts/all-data.sql
+   - Contraseña del .env
+
+3. Acceder al API:
    - [http://localhost:3001](http://localhost:3001)
 
 ## Funcionalidades Clave del Backend

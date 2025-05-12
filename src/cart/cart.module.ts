@@ -5,9 +5,9 @@ import { CartItem } from '../entities/cart-item.entity';
 import { CartService } from './cart.service';
 import { CartController } from './cart.controller';
 import { PassportModule } from '@nestjs/passport';
-import { GiftsModule } from 'src/gifts/gifts.module';
-import { CandlesModule } from 'src/candles/candles.module';
-import { AuthModule } from 'src/auth/auth.module';
+import { GiftsModule } from '../gifts/gifts.module';
+import { CandlesModule } from '../candles/candles.module';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Cart, CartItem]), PassportModule.register({ defaultStrategy: 'jwt' }), GiftsModule, CandlesModule, AuthModule],

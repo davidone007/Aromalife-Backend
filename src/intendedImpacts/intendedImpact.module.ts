@@ -4,8 +4,8 @@ import { PassportModule } from '@nestjs/passport';
 import { IntendedImpact } from '../entities/intendedImpact.entity';
 import { IntendedImpactService } from './intendedImpact.service';
 import { IntendedImpactController } from './intendedImpact.controller';
-import { MainOptionModule } from 'src/mainOptions/mainOption.module';
-import { PlacesModule } from 'src/places/places.module';
+import { MainOptionModule } from '../mainOptions/mainOption.module';
+import { PlacesModule } from '../places/places.module';
 
 @Module({
   imports: [

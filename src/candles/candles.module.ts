@@ -8,7 +8,7 @@ import { Aroma } from '../entities/aroma.entity';
 import { Gift } from '../entities/gift.entity';
 import { Order } from '../entities/order.entity';
 import { PassportModule } from '@nestjs/passport';
-import { AuthModule } from 'src/auth/auth.module';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Candle, Container, Aroma, Gift, Order]), PassportModule.register({ defaultStrategy: 'jwt' }), AuthModule],

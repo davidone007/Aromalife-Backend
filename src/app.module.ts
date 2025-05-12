@@ -29,18 +29,18 @@ import { CartModule } from './cart/cart.module';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => {
         const isProd = process.env.NODE_ENV === 'production';
-        
+
         if (isProd) {
           return {
             type: 'postgres',
             url: configService.get('DATABASE_URL'),
             entities: [__dirname + '/**/*.entity{.ts,.js}'],
-            synchronize: true, 
+            synchronize: true,
             ssl: {
-              rejectUnauthorized: false // Necesario para algunas plataformas cloud
+              rejectUnauthorized: false, // Necesario para algunas plataformas cloud
             },
             logging: true,
-          }
+          };
         }
 
         return {
@@ -52,8 +52,8 @@ import { CartModule } from './cart/cart.module';
           database: configService.get('DB_DATABASE'),
           entities: [__dirname + '/**/*.entity{.ts,.js}'],
           synchronize: true,
-          logging: true
-        }
+          logging: true,
+        };
       },
       inject: [ConfigService],
     }),

@@ -5,7 +5,10 @@ module.exports = {
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
-  collectCoverageFrom: ['**/*.(t|j)s'],
+  collectCoverageFrom: [
+    '**/*.service.ts',
+    '**/*.controller.ts',
+  ],
   coverageDirectory: './coverage',
   testEnvironment: 'node',
   moduleNameMapper: {
@@ -23,4 +26,4 @@ module.exports = {
       usePathForSuiteName: true
     }]
   ]
-}; 
+};

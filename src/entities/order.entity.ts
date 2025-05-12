@@ -7,6 +7,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 import { User } from '../auth/entity/user.entity';
+import { Gift } from './gift.entity';
 import { Review } from './review.entity';
 import { OrderItem } from './order-item.entity';
 
